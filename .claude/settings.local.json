@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv gruempi.code-workspace /tmp/gruempi.code-workspace)",
+      "Bash(npx create-next-app@15 . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(mv /tmp/gruempi.code-workspace gruempi.code-workspace)"
+    ]
+  }
+}

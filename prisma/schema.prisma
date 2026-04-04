@@ -1,0 +1,134 @@
+// Prisma schema — SQLite (dev). Enums stored as String.
+// Values: PaymentStatus: PENDING | PAID | REFUNDED
+//         Phase: GROUP | QUARTERFINAL | SEMIFINAL | FINAL | THIRD_PLACE
+//         MatchStatus: SCHEDULED | IN_PROGRESS | COMPLETED | CANCELLED
+//         Role: ADMIN | SCORER
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Tournament {
+  id                   String    @id @default(cuid())
+  name                 String
+  year                 Int       @unique
+  date                 DateTime
+  startTime            String
+  endTime              String
+  lunchStart           String?
+  lunchEnd             String?
+  location             String
+  organizer            String
+  heroText             String?
+  description          String?
+  registrationDeadline DateTime?
+  entryFee             Float     @default(30)
+  teamSize             Int       @default(6)
+  fieldPlayers         Int       @default(4)
+  goalieCount          Int       @default(1)
+  maxSubstitutes       Int       @default(1)
+  matchDuration        Int       @default(10)
+  isActive             Boolean   @default(false)
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  categories Category[]
+  teams      Team[]
+  matches    Match[]
+}
+
+model Category {
+  id           String  @id @default(cuid())
+  tournamentId String
+  name         String
+  slug         String
+  description  String?
+  order        Int     @default(0)
+  isActive     Boolean @default(true)
+
+  tournament Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  teams      Team[]
+  matches    Match[]
+
+  @@unique([tournamentId, slug])
+}
+
+model Team {
+  id            String   @id @default(cuid())
+  tournamentId  String
+  categoryId    String
+  name          String
+  captainName   String
+  captainEmail  String
+  captainPhone  String
+  notes         String?
+  // PaymentStatus: PENDING | PAID | REFUNDED
+  paymentStatus String   @default("PENDING")
+  isConfirmed   Boolean  @default(false)
+  registeredAt  DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  tournament  Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  category    Category   @relation(fields: [categoryId], references: [id])
+  players     Player[]
+  homeMatches Match[]    @relation("HomeTeam")
+  awayMatches Match[]    @relation("AwayTeam")
+}
+
+model Player {
+  id        String @id @default(cuid())
+  teamId    String
+  name      String
+  birthYear Int
+
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+}
+
+model Match {
+  id           String    @id @default(cuid())
+  tournamentId String
+  categoryId   String
+  homeTeamId   String?
+  awayTeamId   String?
+  field        String?
+  scheduledAt  DateTime?
+  // Phase: GROUP | QUARTERFINAL | SEMIFINAL | FINAL | THIRD_PLACE
+  phase        String    @default("GROUP")
+  groupName    String?
+  // MatchStatus: SCHEDULED | IN_PROGRESS | COMPLETED | CANCELLED
+  status       String    @default("SCHEDULED")
+  homeScore    Int?
+  awayScore    Int?
+  notes        String?
+  matchNumber  Int?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  tournament Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  category   Category   @relation(fields: [categoryId], references: [id])
+  homeTeam   Team?      @relation("HomeTeam", fields: [homeTeamId], references: [id])
+  awayTeam   Team?      @relation("AwayTeam", fields: [awayTeamId], references: [id])
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  // Role: ADMIN | SCORER
+  role      String   @default("SCORER")
+  createdAt DateTime @default(now())
+}
+
+model LegalPage {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  content   String
+  updatedAt DateTime @updatedAt
+}
