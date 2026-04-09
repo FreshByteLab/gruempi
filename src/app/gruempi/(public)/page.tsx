@@ -46,14 +46,18 @@ export default async function HomePage() {
   return (
     <div>
       {/* ===== HERO ===== */}
-      <section className="relative bg-primary-800 text-white overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 hero-stripes" />
-        <div className="absolute inset-0 field-pattern opacity-30" />
-        {/* Diagonal accent band */}
-        <div className="absolute -right-20 top-0 w-96 h-full bg-accent-600/20 skew-x-6" />
+      <section className="relative text-white overflow-hidden">
+        {/* Photo background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
+        />
+        {/* Dark gradient overlay — left side darker for text legibility, right fades to transparent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        {/* Bottom fade into page */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent" />
 
-        <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
+        <div className="relative max-w-6xl mx-auto px-4 py-24 md:py-36 min-h-[520px] md:min-h-[600px] flex items-center">
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
@@ -120,12 +124,6 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Wave bottom */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="#f9fafb"/>
-          </svg>
-        </div>
       </section>
 
       {/* ===== NOTICE ===== */}
