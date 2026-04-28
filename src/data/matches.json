@@ -1,0 +1,188 @@
+[
+  {
+    "id": "cmnixbq9u002chsjdoaxd8i45",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-adler-hermetschwil",
+    "awayTeamId": "seed-4-6-klasse-black-panthers",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T07:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "COMPLETED",
+    "homeScore": 3,
+    "awayScore": 1,
+    "notes": null,
+    "matchNumber": 1,
+    "createdAt": "2026-04-03T13:12:49.602Z",
+    "updatedAt": "2026-04-03T13:12:49.602Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-adler-hermetschwil",
+      "name": "Adler Hermetschwil"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-black-panthers",
+      "name": "Black Panthers"
+    }
+  },
+  {
+    "id": "cmnje7bhy002csavdpuwa6gm0",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-adler-hermetschwil",
+    "awayTeamId": "seed-4-6-klasse-black-panthers",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T07:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "COMPLETED",
+    "homeScore": 3,
+    "awayScore": 1,
+    "notes": null,
+    "matchNumber": 1,
+    "createdAt": "2026-04-03T21:05:17.302Z",
+    "updatedAt": "2026-04-03T21:05:17.302Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-adler-hermetschwil",
+      "name": "Adler Hermetschwil"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-black-panthers",
+      "name": "Black Panthers"
+    }
+  },
+  {
+    "id": "cmnixbqa0002ehsjd25eg8wv5",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-adler-hermetschwil",
+    "awayTeamId": "seed-4-6-klasse-fc-dorfplatz",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T08:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "COMPLETED",
+    "homeScore": 2,
+    "awayScore": 2,
+    "notes": null,
+    "matchNumber": 2,
+    "createdAt": "2026-04-03T13:12:49.608Z",
+    "updatedAt": "2026-04-03T13:12:49.608Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-adler-hermetschwil",
+      "name": "Adler Hermetschwil"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-fc-dorfplatz",
+      "name": "FC Dorfplatz"
+    }
+  },
+  {
+    "id": "cmnje7bi6002esavdq4052dd0",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-adler-hermetschwil",
+    "awayTeamId": "seed-4-6-klasse-fc-dorfplatz",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T08:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "COMPLETED",
+    "homeScore": 2,
+    "awayScore": 2,
+    "notes": null,
+    "matchNumber": 2,
+    "createdAt": "2026-04-03T21:05:17.310Z",
+    "updatedAt": "2026-04-03T21:05:17.310Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-adler-hermetschwil",
+      "name": "Adler Hermetschwil"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-fc-dorfplatz",
+      "name": "FC Dorfplatz"
+    }
+  },
+  {
+    "id": "cmnixbqa6002ghsjd5jeamgwk",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-black-panthers",
+    "awayTeamId": "seed-4-6-klasse-fc-dorfplatz",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T09:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "SCHEDULED",
+    "homeScore": null,
+    "awayScore": null,
+    "notes": null,
+    "matchNumber": 3,
+    "createdAt": "2026-04-03T13:12:49.614Z",
+    "updatedAt": "2026-04-03T13:12:49.614Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-black-panthers",
+      "name": "Black Panthers"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-fc-dorfplatz",
+      "name": "FC Dorfplatz"
+    }
+  },
+  {
+    "id": "cmnje7bid002gsavd2qn5llei",
+    "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+    "categoryId": "cmnixbq6f0008hsjdg1iqnfd2",
+    "homeTeamId": "seed-4-6-klasse-black-panthers",
+    "awayTeamId": "seed-4-6-klasse-fc-dorfplatz",
+    "field": "Feld 1",
+    "scheduledAt": "2026-06-27T09:00:00.000Z",
+    "phase": "GROUP",
+    "groupName": "Gruppe A",
+    "status": "SCHEDULED",
+    "homeScore": null,
+    "awayScore": null,
+    "notes": null,
+    "matchNumber": 3,
+    "createdAt": "2026-04-03T21:05:17.318Z",
+    "updatedAt": "2026-04-03T21:05:17.318Z",
+    "category": {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse"
+    },
+    "homeTeam": {
+      "id": "seed-4-6-klasse-black-panthers",
+      "name": "Black Panthers"
+    },
+    "awayTeam": {
+      "id": "seed-4-6-klasse-fc-dorfplatz",
+      "name": "FC Dorfplatz"
+    }
+  }
+]

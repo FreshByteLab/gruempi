@@ -1,0 +1,118 @@
+{
+  "id": "cmnixbq5r0002hsjd6dwvun3u",
+  "name": "Grümpelturnier Hermetschwil-Staffeln 2026",
+  "year": 2026,
+  "date": "2026-06-27T07:00:00.000Z",
+  "startTime": "09:00",
+  "endTime": "16:00",
+  "lunchStart": "12:00",
+  "lunchEnd": "13:00",
+  "location": "Fussballplatz Staffeln",
+  "organizer": "EVHS",
+  "heroText": "Das grösste Kinderfussballturnier im Dorf – sei dabei!",
+  "description": "Das Grümpelturnier Hermetschwil-Staffeln bringt alle Kinder des Dorfes auf den Fussballplatz. Fairplay, Spass und Gemeinschaft stehen im Vordergrund. Teams aus allen Altersstufen messen sich in spannenden Gruppen- und Finalspielen.",
+  "registrationDeadline": "2026-04-30T21:59:59.000Z",
+  "entryFee": 30,
+  "teamSize": 6,
+  "fieldPlayers": 4,
+  "goalieCount": 1,
+  "maxSubstitutes": 1,
+  "matchDuration": 10,
+  "isActive": true,
+  "createdAt": "2026-04-03T13:12:49.455Z",
+  "updatedAt": "2026-04-03T21:05:17.269Z",
+  "categories": [
+    {
+      "id": "cmnixbq5z0004hsjdc0ww8c0f",
+      "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+      "name": "Kindergarten",
+      "slug": "kindergarten",
+      "description": "Für die Jüngsten – Spass und Bewegung im Vordergrund.",
+      "order": 0,
+      "isActive": true,
+      "teams": [
+        {
+          "id": "seed-kindergarten-die-zwerge",
+          "name": "Die Zwerge"
+        },
+        {
+          "id": "seed-kindergarten-regenbogen-fc",
+          "name": "Regenbogen FC"
+        },
+        {
+          "id": "seed-kindergarten-sternchen-united",
+          "name": "Sternchen United"
+        }
+      ]
+    },
+    {
+      "id": "cmnixbq680006hsjd3ewnwty8",
+      "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+      "name": "1.–3. Klasse",
+      "slug": "1-3-klasse",
+      "description": "Erste Turnierluft schnuppern – mit viel Begeisterung.",
+      "order": 1,
+      "isActive": true,
+      "teams": [
+        {
+          "id": "seed-1-3-klasse-blitz-&-donner",
+          "name": "Blitz & Donner"
+        },
+        {
+          "id": "seed-1-3-klasse-fc-staffeln-junior",
+          "name": "FC Staffeln Junior"
+        },
+        {
+          "id": "seed-1-3-klasse-tornado-boys",
+          "name": "Tornado Boys"
+        }
+      ]
+    },
+    {
+      "id": "cmnixbq6f0008hsjdg1iqnfd2",
+      "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+      "name": "4.–6. Klasse",
+      "slug": "4-6-klasse",
+      "description": "Technik und Teamgeist zählen.",
+      "order": 2,
+      "isActive": true,
+      "teams": [
+        {
+          "id": "seed-4-6-klasse-adler-hermetschwil",
+          "name": "Adler Hermetschwil"
+        },
+        {
+          "id": "seed-4-6-klasse-black-panthers",
+          "name": "Black Panthers"
+        },
+        {
+          "id": "seed-4-6-klasse-fc-dorfplatz",
+          "name": "FC Dorfplatz"
+        }
+      ]
+    },
+    {
+      "id": "cmnixbq6n000ahsjd691y287k",
+      "tournamentId": "cmnixbq5r0002hsjd6dwvun3u",
+      "name": "Oberstufe",
+      "slug": "oberstufe",
+      "description": "Die grossen Kicker – hier wird es ernst.",
+      "order": 3,
+      "isActive": true,
+      "teams": [
+        {
+          "id": "seed-oberstufe-stufe-sharks",
+          "name": "Stufe Sharks"
+        },
+        {
+          "id": "seed-oberstufe-fc-real-staffeln",
+          "name": "FC Real Staffeln"
+        },
+        {
+          "id": "seed-oberstufe-hermetschwil-kings",
+          "name": "Hermetschwil Kings"
+        }
+      ]
+    }
+  ]
+}

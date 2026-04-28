@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { prisma } from "@/lib/gruempi/db";
 import { notFound } from "next/navigation";
+import { getLegalPageStatic } from "@/lib/gruempi/static-data";
 
 export const metadata: Metadata = { title: "Teilnahmebedingungen" };
 
@@ -26,8 +26,8 @@ function renderMarkdown(content: string) {
   return elements;
 }
 
-export default async function TeilnahmebedingungenPage() {
-  const page = await prisma.legalPage.findUnique({ where: { slug: "teilnahmebedingungen" } });
+export default function TeilnahmebedingungenPage() {
+  const page = getLegalPageStatic("teilnahmebedingungen");
   if (!page) notFound();
 
   return (
@@ -35,9 +35,7 @@ export default async function TeilnahmebedingungenPage() {
       <h1 className="text-4xl font-extrabold text-gray-900 mb-2">{page.title}</h1>
       <p className="text-sm text-gray-400 mb-8">
         Zuletzt aktualisiert:{" "}
-        {new Intl.DateTimeFormat("de-CH", { day: "numeric", month: "long", year: "numeric" }).format(
-          new Date(page.updatedAt)
-        )}
+        {new Intl.DateTimeFormat("de-CH", { day: "numeric", month: "long", year: "numeric" }).format(page.updatedAt)}
       </p>
       <div className="prose-like">{renderMarkdown(page.content)}</div>
     </div>

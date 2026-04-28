@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { getActiveTournament } from "@/lib/gruempi/queries/tournament";
-import { getMatchesByTournament } from "@/lib/gruempi/queries/matches";
+import { getActiveTournamentStatic, getMatchesStatic } from "@/lib/gruempi/static-data";
 import { PHASE_LABELS, STATUS_LABELS, STATUS_COLORS } from "@/lib/gruempi/constants";
 import type { MatchWithTeams, MatchStatus } from "@/lib/gruempi/types";
 import { Badge } from "@/components/gruempi/ui/Badge";
 import { Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = { title: "Spielplan" };
-export const revalidate = 60;
-
 function formatTime(date: Date | null) {
   if (!date) return "–";
   return new Intl.DateTimeFormat("de-CH", { hour: "2-digit", minute: "2-digit" }).format(
@@ -97,10 +94,10 @@ function MatchRow({ match }: { match: MatchWithTeams }) {
 }
 
 export default async function SpielplanPage() {
-  const tournament = await getActiveTournament();
+  const tournament = getActiveTournamentStatic();
   if (!tournament) return <p className="p-8 text-gray-500">Kein aktives Turnier.</p>;
 
-  const matches = await getMatchesByTournament(tournament.id);
+  const matches = getMatchesStatic();
 
   // Group by category, then phase
   const byCategory = tournament.categories.map((cat) => {

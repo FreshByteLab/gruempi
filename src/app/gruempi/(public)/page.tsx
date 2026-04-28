@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { CalendarDays, MapPin, Clock, Users, Trophy, ChevronRight, Star, Mail } from "lucide-react";
-import { getActiveTournament } from "@/lib/gruempi/queries/tournament";
+import { getActiveTournamentStatic } from "@/lib/gruempi/static-data";
 import { Button } from "@/components/gruempi/ui/Button";
-
-export const revalidate = 300; // 5 minutes
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat("de-CH", {
@@ -30,7 +28,7 @@ const categoryIcons: Record<string, string> = {
 };
 
 export default async function HomePage() {
-  const tournament = await getActiveTournament();
+  const tournament = getActiveTournamentStatic();
 
   if (!tournament) {
     return (
@@ -50,7 +48,7 @@ export default async function HomePage() {
         {/* Photo background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/hero-bg.png')" }}
+          style={{ backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/hero-bg.png')` }}
         />
         {/* Dark gradient overlay — left side darker for text legibility, right fades to transparent */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />

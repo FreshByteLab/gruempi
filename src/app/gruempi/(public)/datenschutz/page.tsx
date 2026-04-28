@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { prisma } from "@/lib/gruempi/db";
 import { notFound } from "next/navigation";
+import { getLegalPageStatic } from "@/lib/gruempi/static-data";
 
 export const metadata: Metadata = { title: "Datenschutz" };
 
 function renderMarkdown(content: string) {
-  // Very simple markdown rendering for headings and paragraphs
   const lines = content.split("\n");
   const elements: React.ReactElement[] = [];
   let key = 0;
@@ -27,8 +26,8 @@ function renderMarkdown(content: string) {
   return elements;
 }
 
-export default async function DatenschutzPage() {
-  const page = await prisma.legalPage.findUnique({ where: { slug: "datenschutz" } });
+export default function DatenschutzPage() {
+  const page = getLegalPageStatic("datenschutz");
   if (!page) notFound();
 
   return (
@@ -36,9 +35,7 @@ export default async function DatenschutzPage() {
       <h1 className="text-4xl font-extrabold text-gray-900 mb-2">{page.title}</h1>
       <p className="text-sm text-gray-400 mb-8">
         Zuletzt aktualisiert:{" "}
-        {new Intl.DateTimeFormat("de-CH", { day: "numeric", month: "long", year: "numeric" }).format(
-          new Date(page.updatedAt)
-        )}
+        {new Intl.DateTimeFormat("de-CH", { day: "numeric", month: "long", year: "numeric" }).format(page.updatedAt)}
       </p>
       <div className="prose-like">{renderMarkdown(page.content)}</div>
     </div>

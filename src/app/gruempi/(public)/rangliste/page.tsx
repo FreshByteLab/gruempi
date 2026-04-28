@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { getActiveTournament } from "@/lib/gruempi/queries/tournament";
-import { calculateStandings } from "@/lib/gruempi/queries/standings";
+import { getActiveTournamentStatic, calculateStandingsStatic } from "@/lib/gruempi/static-data";
 import { Trophy } from "lucide-react";
 
 export const metadata: Metadata = { title: "Rangliste" };
-export const revalidate = 60;
-
 export default async function RanglistePage() {
-  const tournament = await getActiveTournament();
+  const tournament = getActiveTournamentStatic();
   if (!tournament) return <p className="p-8 text-gray-500">Kein aktives Turnier.</p>;
 
-  const standings = await calculateStandings(tournament.id);
+  const standings = calculateStandingsStatic();
   const hasData = standings.some((s) => s.standings.some((r) => r.played > 0));
 
   return (

@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { getActiveTournament } from "@/lib/gruempi/queries/tournament";
-import { RegistrationForm } from "./RegistrationForm";
-import { AlertCircle } from "lucide-react";
+import { getActiveTournamentStatic } from "@/lib/gruempi/static-data";
+import { AlertCircle, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = { title: "Anmeldung" };
-export const revalidate = 300;
 
-export default async function AnmeldungPage() {
-  const tournament = await getActiveTournament();
+export default function AnmeldungPage() {
+  const tournament = getActiveTournamentStatic();
 
   if (!tournament) {
     return (
@@ -49,13 +47,41 @@ export default async function AnmeldungPage() {
           </p>
         </div>
       ) : (
-        <RegistrationForm
-          categories={tournament.categories.filter((c) => c.isActive).map((c) => ({
-            id: c.id,
-            name: c.name,
-          }))}
-          tournamentTeamSize={tournament.teamSize}
-        />
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-100 mb-4">
+              <Mail size={28} className="text-primary-700" />
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Anmeldung per E-Mail</h2>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
+              Sende uns eine E-Mail mit Teamname, Kategorie, Name und Telefon der
+              Kontaktperson sowie die Namen aller Spielerinnen und Spieler.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <a
+              href="mailto:sandro@gruempi.ch?subject=Anmeldung Grümpelturnier 2026"
+              className="flex items-center justify-center gap-2 w-full bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-800 transition-colors"
+            >
+              <Mail size={18} />
+              sandro@gruempi.ch
+            </a>
+
+            {formatDeadline && (
+              <div className="flex items-center gap-2 text-sm text-gray-500 justify-center">
+                <Clock size={14} />
+                <span>Anmeldeschluss: {formatDeadline}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <p className="text-xs text-gray-400 text-center">
+              Startgeld: CHF {tournament.entryFee}.– pro Team · {tournament.teamSize} Kinder pro Team
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );

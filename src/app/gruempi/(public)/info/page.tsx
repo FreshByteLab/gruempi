@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getActiveTournament } from "@/lib/gruempi/queries/tournament";
+import { getActiveTournamentStatic } from "@/lib/gruempi/static-data";
 import { CalendarDays, MapPin, Clock, Users, Trophy, Target, Coffee, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/gruempi/ui/Button";
@@ -22,7 +22,7 @@ function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string;
 }
 
 export default async function InfoPage() {
-  const t = await getActiveTournament();
+  const t = getActiveTournamentStatic();
   if (!t) return <p className="p-8 text-gray-500">Kein aktives Turnier gefunden.</p>;
 
   const formatDate = (d: Date) =>
