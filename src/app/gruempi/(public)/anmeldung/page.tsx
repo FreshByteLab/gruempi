@@ -61,7 +61,33 @@ export default function AnmeldungPage() {
 
           <div className="space-y-3">
             <a
-              href="mailto:sandrozwyssig@gmail.com?subject=Anmeldung Grümpelturnier 2026"
+              href={`mailto:sandrozwyssig@gmail.com?subject=${encodeURIComponent("Anmeldung Grümpelturnier 2026")}&body=${encodeURIComponent(
+`Hallo
+
+Ich möchte unser Team für das Grümpelturnier 2026 anmelden.
+
+--- TEAMINFOS ---
+Teamname:
+Kategorie: (Kindergarten / 1.–3. Klasse / 4.–6. Klasse / Oberstufe)
+
+--- KONTAKTPERSON ---
+Name:
+Telefon:
+E-Mail:
+
+--- KINDER (Name, Jahrgang) ---
+1.
+2.
+3.
+4.
+5.
+6. (Auswechselspieler, optional)
+
+--- BEMERKUNGEN ---
+(optional)
+
+Freundliche Grüsse`
+)}`}
               className="flex items-center justify-center gap-2 w-full bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-800 transition-colors"
             >
               <Mail size={18} />
