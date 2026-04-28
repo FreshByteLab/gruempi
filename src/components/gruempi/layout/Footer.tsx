@@ -34,8 +34,8 @@ export function Footer() {
             <h4 className="font-semibold mb-3 text-white">Kontakt & Rechtliches</h4>
             <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
               <Mail size={14} />
-              <a href="mailto:sandro@gruempi.ch" className="hover:text-white transition-colors">
-                sandro@gruempi.ch
+              <a href="mailto:sandrozwyssig@gmail.com" className="hover:text-white transition-colors">
+                sandrozwyssig@gmail.com
               </a>
             </div>
             <p className="text-sm text-gray-400 mb-4">Veranstalter: EVHS</p>

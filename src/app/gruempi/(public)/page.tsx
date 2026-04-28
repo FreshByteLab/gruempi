@@ -263,11 +263,11 @@ export default async function HomePage() {
         </p>
         <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
           <a
-            href="mailto:sandro@gruempi.ch"
+            href="mailto:sandrozwyssig@gmail.com"
             className="flex items-center gap-2 bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-800 transition-colors"
           >
             <Mail size={18} />
-            sandro@gruempi.ch
+            sandrozwyssig@gmail.com
           </a>
           <span className="text-gray-400 text-sm">Veranstalter: EVHS</span>
         </div>

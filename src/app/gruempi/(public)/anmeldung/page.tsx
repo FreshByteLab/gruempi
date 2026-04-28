@@ -43,7 +43,7 @@ export default function AnmeldungPage() {
           <AlertCircle size={32} className="text-red-400 mx-auto mb-3" />
           <h2 className="text-lg font-bold text-red-800 mb-1">Anmeldung geschlossen</h2>
           <p className="text-red-600 text-sm">
-            Die Anmeldefrist ist leider abgelaufen. Bei Fragen: sandro@gruempi.ch
+            Die Anmeldefrist ist leider abgelaufen. Bei Fragen: sandrozwyssig@gmail.com
           </p>
         </div>
       ) : (
@@ -61,11 +61,11 @@ export default function AnmeldungPage() {
 
           <div className="space-y-3">
             <a
-              href="mailto:sandro@gruempi.ch?subject=Anmeldung Grümpelturnier 2026"
+              href="mailto:sandrozwyssig@gmail.com?subject=Anmeldung Grümpelturnier 2026"
               className="flex items-center justify-center gap-2 w-full bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-800 transition-colors"
             >
               <Mail size={18} />
-              sandro@gruempi.ch
+              sandrozwyssig@gmail.com
             </a>
 
             {formatDeadline && (

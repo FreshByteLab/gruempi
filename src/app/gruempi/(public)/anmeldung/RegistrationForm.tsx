@@ -74,7 +74,7 @@ export function RegistrationForm({ categories, tournamentTeamSize }: Props) {
         </p>
         <p className="text-primary-600 text-sm leading-relaxed">
           Vielen Dank für eure Anmeldung! Ihr erhaltet eine Bestätigung sobald eure Anmeldung
-          geprüft wurde. Fragen? sandro@gruempi.ch
+          geprüft wurde. Fragen? sandrozwyssig@gmail.com
         </p>
         <button
           onClick={() => setResult(null)}
