@@ -46,10 +46,11 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          # Copy _next assets and public files into the gruempi subdir,
-          # which is uploaded as the artifact root (served at /gruempi/ on Pages)
+          # Copy _next assets and public static files (images etc.) into gruempi subdir.
+          # Exclude .html — out/index.html is the empty null root page and must not
+          # overwrite out/gruempi/index.html (the real tournament homepage).
           cp -r out/_next out/gruempi/_next
-          find out -maxdepth 1 -type f -exec cp {} out/gruempi/ \;
+          find out -maxdepth 1 -type f ! -name "*.html" -exec cp {} out/gruempi/ \;
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
